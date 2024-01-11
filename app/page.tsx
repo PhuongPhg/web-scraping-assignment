@@ -4,7 +4,6 @@ import { CommonButton } from "@/components/CommonButton";
 import { ProductCard } from "@/components/ProductCard";
 import { Skeleton } from "@/components/Skeleton";
 import { IProductItem } from "@/types/product";
-import { generateAnalysisPdf } from "@/utils/export-products";
 import { getDisplayFloatNumber } from "@/utils/product";
 import { useQuery } from "@tanstack/react-query";
 import { useCallback } from "react";
@@ -30,6 +29,7 @@ export default function Home() {
 
   const downloadAsPdf = useCallback(async () => {
     if (isFetching || isError) return;
+    const { generateAnalysisPdf } = await import("@/utils/export-products");
     generateAnalysisPdf(data);
   }, [data, isError, isFetching]);
 
