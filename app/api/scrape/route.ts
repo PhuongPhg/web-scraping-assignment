@@ -1,15 +1,15 @@
 import { IProductItem } from "@/types/product";
 import { calculateStorageCapacity } from "@/utils/product";
-import mean from "lodash/mean";
 import head from "lodash/head";
-import sortBy from "lodash/sortBy";
 import last from "lodash/last";
-import { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from "next/server";
+import mean from "lodash/mean";
+import sortBy from "lodash/sortBy";
+import { NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
 const { spawn } = require("child_process");
 
-export async function GET(_req: NextApiRequest, _res: NextApiResponse) {
+export async function GET(_req: NextRequest, _res: NextApiResponse) {
   let python = spawn("python3", ["app/api/scrape/index.py"]);
   let dataToSend = "";
   let list = [];
