@@ -5,6 +5,9 @@ const GB_STORAGE_UNIT = "GB";
 const TB_STORAGE_UNIT = "TB";
 const TB_TO_GB_CONVERSION = 1024;
 
+// to cut the string that contain the storage capacity infomation
+// which is between the RAM unit and the storage unit
+// e.g. "8GB RAM, 256GB SSD + 1TB" => "256GB SSD + 1TB"
 export const findStorageFromDescription = (description: string) => {
   const firstIndex =
     description.indexOf(START_STORAGE_STRING) + START_STORAGE_STRING.length;
@@ -44,6 +47,7 @@ export const calculateStorageCapacity = (description: string) => {
   return totalCapacity;
 };
 
+// display number with 2 decimals
 export const getDisplayFloatNumber = (number: number) =>
   Math.round(number * 100) / 100;
 

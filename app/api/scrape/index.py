@@ -6,5 +6,5 @@ response = requests.get(url)
 
 soup = BeautifulSoup(response.text, "html.parser")
 
-a = soup.find("div", {"class": "row ecomerce-items ecomerce-items-more"})
-print(a['data-items'])
+rows = soup.find("div", {"class": "row ecomerce-items ecomerce-items-more"})
+print(rows['data-items'])
