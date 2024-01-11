@@ -1,3 +1,5 @@
+import { IProductItem } from "@/types/product";
+
 const START_STORAGE_STRING = "GB";
 const GB_STORAGE_UNIT = "GB";
 const TB_STORAGE_UNIT = "TB";
@@ -44,3 +46,10 @@ export const calculateStorageCapacity = (description: string) => {
 
 export const getDisplayFloatNumber = (number: number) =>
   Math.round(number * 100) / 100;
+
+export const flattenProductAttribute = (product: IProductItem) => [
+  product.title,
+  "$" + product.price,
+  product.description,
+  product.review,
+];
