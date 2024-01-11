@@ -1,4 +1,4 @@
-import { IProductItem } from "@/types/laptop";
+import { IProductItem } from "@/types/product";
 import { calculateStorageCapacity } from "@/utils/product";
 import mean from "lodash/mean";
 import head from "lodash/head";
