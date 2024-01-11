@@ -16,7 +16,8 @@ export async function GET(_req: NextApiRequest, _res: NextApiResponse) {
   for await (const data of python.stdout) {
     dataToSend += data.toString();
   }
-
+  if (!dataToSend)
+    return NextResponse.json({ message: "No data found" }, { status: 404 });
   const parsedList = JSON.parse(dataToSend);
 
   // the calculation for review count below is detected from the source code of the website

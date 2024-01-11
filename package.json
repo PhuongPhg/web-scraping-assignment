@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prestart": "sh packages.sh"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.17.9",
     "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.1",
     "lodash": "^4.17.21",
     "next": "14.0.4",
     "react": "^18"

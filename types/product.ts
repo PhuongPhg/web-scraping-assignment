@@ -9,6 +9,6 @@ export interface IProductItem {
 export interface IProductResponse {
   list: IProductItem[];
   mostExpensive: IProductItem;
-  mostViewed: IProductItem;
+  mostReviewed: IProductItem;
   averageStorageCapacity: number;
 }

@@ -1,4 +1,4 @@
-import { IProductItem, IProductResponse } from "@/types/product";
+import { IProductItem } from "@/types/product";
 
 const START_STORAGE_STRING = "GB";
 const GB_STORAGE_UNIT = "GB";
@@ -47,42 +47,9 @@ export const calculateStorageCapacity = (description: string) => {
 export const getDisplayFloatNumber = (number: number) =>
   Math.round(number * 100) / 100;
 
-export const generateProductDom = (data: IProductResponse) => {
-  let content = "";
-  content += `<div>
-  <label>The most expensive laptop:</label>
-  <table>${generateProductTableHeaderDom()}${generateProductTableDom([
-    data.mostExpensive,
-  ] as IProductItem[])}</table>
-  </div>`;
-  return `<head><style>
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-  </style></head>
-  <body><div style="width:600px">${content}</div></body>`;
-};
-
-const generateProductTableDom = (products: IProductItem[]) => {
-  let content = "";
-  products.forEach((product) => {
-    content += `<tr><td>${product.title}</td><td>${product.price}</td><td>${product.description}</td><td>${product.review}</td></tr>`;
-  });
-  return content;
-};
-
-const generateProductTableHeaderDom = () => {
-  return `<tr><th>Name</th><th>Price</th><th>Description</th><th>Review Count</th></tr>`;
-};
+export const flattenProductAttribute = (product: IProductItem) => [
+  product.title,
+  "$" + product.price,
+  product.description,
+  product.review,
+];
