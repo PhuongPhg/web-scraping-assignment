@@ -11,12 +11,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - Data Scraping:
 
-  - using `Python` with `BeautifulSoup` to scrape the data with the information like name, price, description.
+  - using `Python` with `BeautifulSoup` to scrape the data with the information like name, price, description. -> [app/api/scrape/index.py](app/api/scrape/index.py)
 
 - Data Analysis:
 
   - I send the scraped data to `JavaScript` (using `NextJs`, a framework base on `React`), find the calculation formula for number of reviews on the source of the website, find the storage capacity from the product's description and return the needed information.
-  - To return the data, I use `NextJs`'s feature which is [API Routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) which serves as an API and they will handle everything on the server-side so the data is return faster and not create any client bundle size.
+  - To return the data, I use `NextJs`'s feature which is [API Routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) which serves as an API and they will handle everything on the server-side so the data is return faster and not create any client bundle size. -> [app/api/scrape/route.ts](app/api/scrape/route.ts)
 
 - PDF Generation:
 
