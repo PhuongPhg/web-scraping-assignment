@@ -20,6 +20,7 @@ export default function Home() {
     queryFn: fetchLaptopList,
     initialData: { list: [], averageStorageCapacity: 0 },
     retry: false,
+    refetchOnWindowFocus: false,
   });
 
   const getSkeletonIndex = useCallback(

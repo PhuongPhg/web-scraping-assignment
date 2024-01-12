@@ -54,6 +54,7 @@ export const getDisplayFloatNumber = (number: number) =>
 export const flattenProductAttribute = (product: IProductItem) => [
   product.title,
   "$" + product.price,
+  findStorageFromDescription(product.description),
   product.description,
   product.review,
 ];

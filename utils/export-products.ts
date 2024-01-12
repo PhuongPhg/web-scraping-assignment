@@ -13,7 +13,7 @@ declare module "jspdf" {
 export const generateAnalysisPdf = (data: IProductResponse) => {
   const doc = new jsPDF();
   let finalY = doc.lastAutoTable.finalY || 10;
-  const head = [["Name", "Price", "Description", "Review Count"]];
+  const head = [["Name", "Price", "Storage", "Description", "Review Count"]];
   doc.text("The most expensive laptop:", 14, finalY + 15);
 
   autoTable(doc, {

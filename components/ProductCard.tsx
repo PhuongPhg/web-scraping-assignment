@@ -1,4 +1,5 @@
 import { IProductItem } from "@/types/product";
+import { findStorageFromDescription } from "@/utils/product";
 
 export const ProductCard = ({ product }: { product: IProductItem }) => {
   return (
@@ -9,6 +10,11 @@ export const ProductCard = ({ product }: { product: IProductItem }) => {
       </h3>
 
       <p className="m-0 mb-3 text-sm opacity-50">{product.description}</p>
+      <p className="m-0 mb-3 text-sm opacity-50">
+        <strong>
+          Storage Capacity: {findStorageFromDescription(product.description)}
+        </strong>
+      </p>
       <p className="mb-3 text-red-600/75">Reviews: &nbsp;{product.review}</p>
     </div>
   );

@@ -1,36 +1,39 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# [Live demo](https://web-scraping-assignment-f9d06870fb99.herokuapp.com/)
+
+## Info
+
+- Project: E-commerce Data Analysis Application
+- The scraped website: [Web Scraper Test Sites](https://webscraper.io/test-sites/e-commerce/more/computers/laptops)
+
+## Features, Technical Information:
+
+- Data Scraping:
+
+  - using `Python` with `BeautifulSoup` to scrape the data with the information like name, price, description.
+
+- Data Analysis:
+
+  - I send the scraped data to `JavaScript` (using `NextJs`, a framework base on `React`), find the calculation formula for number of reviews on the source of the website, find the storage capacity from the product's description and return the needed information.
+  - To return the data, I use `NextJs`'s feature which is [API Routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) which serves as an API and they will handle everything on the server-side so the data is return faster and not create any client bundle size.
+
+- PDF Generation:
+
+  - I use `jsPDF` with the help of `jspdf-autotable` to render the PDF file quickly, based on the data above with all the informations that shows on the screen.
+
+- User Interface:
+  - I use `NextJs` to create the UI and `tailwind` to style the application due to it friendly, faster and can reduce the duplicated style.
+
 ## Getting Started
 
 First, run the development server:
+Note: Please make sure you have the node version >= 18.17.x and Python environment on your local
 
 ```bash
+npm i
+npm run prestart
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
