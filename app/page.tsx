@@ -15,7 +15,7 @@ export default function Home() {
     return res.json();
   }, []);
 
-  const { data, isFetching, isError, status } = useQuery({
+  const { data, isFetching, isError } = useQuery({
     queryKey: ["laptopList"],
     queryFn: fetchLaptopList,
     initialData: { list: [], averageStorageCapacity: 0 },
